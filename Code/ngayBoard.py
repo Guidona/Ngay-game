@@ -89,7 +89,6 @@ class Board:
             self.verifGain()
         else:
             self.counter = 1
-        
 
     def jeuSud(self):
         if((self.c == 'A') & (self.cases[0] > 1)):

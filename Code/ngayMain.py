@@ -5,7 +5,7 @@ from ngayBoard import *
 board = Board()
 
 while(1):
-    os.system('clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
     board.printBoard()
     printString = 'Player ' + str(board.counter + 1) + ' >>> '
     board.c = input(printString)
