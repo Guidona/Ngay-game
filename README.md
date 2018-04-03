@@ -3,6 +3,6 @@ Implementation of a traditional Tupuri game called Ngay
 
 To launch game;
 
-__*cd Code*
+__*cd Code*__
 
-*python3 ngayMain.py*__
+__*python3 ngayMain.py*__
