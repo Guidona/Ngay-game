@@ -4,7 +4,7 @@ class Board:
 
     def init(self):
         self.c = ' '
-        self.cases = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        self.cases = [2, 0, 0, 2, 2, 2, 2, 2, 5, 5]
         self.counter = 0
         self.position = 0
         self.grenier = [0, 0]
@@ -22,25 +22,24 @@ class Board:
         if((self.cases[self.position - 1] == 2) or (self.cases[self.position - 1] == 4)):
             self.gain()
             count += 1
-        self.incPosition
-        while((self.position != 5) or (self.position != 0)):
+        self.incPosition()
+        print(self.position)
+        while((self.position < 5) or (self.position < 10)):
             if((self.cases[self.position - 1] == 2) or (self.cases[self.position - 1] == 4)):
                 self.gain()
                 count += 1
             else:
                 break
-            self.incPosition  
+            self.incPosition()
+            # print(self.position)
         if(count == 1):
             print("Gain simple")
         if(count > 1):
             print("Gain cummulatif")
-                            
-    def verifPosition(self):
-        return self.position % 10
 
     def incCounter(self):
         self.counter += 1
-        self.counter = self.counter % 2
+        self.counter %= 2
             
     def jeuNord(self):
         if((self.c == '1') & (self.cases[9] > 1)):
