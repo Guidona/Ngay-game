@@ -13,6 +13,7 @@ while(1):
     if(board.verifDeadlock() == True):
         print("Fin de la partie")
         break
+    board.verifDeadTurn()
     printString = 'Player ' + str(board.counter + 1) + ' >>> '
     board.c = input(printString)
     # Player ones game turn

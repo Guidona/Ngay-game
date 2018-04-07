@@ -4,7 +4,7 @@ class Board:
 
     def init(self):
         self.c = ' '
-        self.cases = [1, 0, 0, 1, 2, 1, 1, 1, 0, 1]
+        self.cases = [0, 1, 0, 1, 0, 2, 0, 0, 3, 1]
         self.counter = 0
         self.position = 0
         self.grenier = [0, 0]
@@ -84,12 +84,28 @@ class Board:
         else:
             self.counter = 0
 
-    # verifDeadlock function to verify if there isn't any dead lock in the game in order to stop
+    # verifDeadlock function; to verify if there isn't any dead lock in the game in order to stop
     def verifDeadlock(self):
         for i in self.cases:
             if i > 1:
                 return False
         return True
+
+    # verifDeadTurn function; to verify if there isn't a deadlock in the game of a player 
+    def verifDeadTurn(self):
+        if(self.counter == 0):
+            for i in self.cases[:5]:
+                if(i > 1):
+                    return False
+            self.counter = 1
+        else:
+            for i in self.cases[5:]:
+                if(i > 1):
+                    return False
+            self.counter = 0
+        return True
+
+
 
     # Function to print the board to the screen
     def printBoard(self):
